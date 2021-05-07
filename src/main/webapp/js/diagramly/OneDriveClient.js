@@ -256,7 +256,7 @@
     }
 
     var req = new mxXmlRequest(
-      "app.diagrams.net/microsoft" + "?getState=1",
+      "https://app.diagrams.net/microsoft" + "?getState=1",
       null,
       "GET"
     );
