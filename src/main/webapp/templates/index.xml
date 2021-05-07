@@ -44,6 +44,9 @@
   <add>Uhttps://jgraph.github.io/drawio-libs/libs/fortinet/Fortinet_Vertical_Related.xml</add>
   <add>Uhttps://jgraph.github.io/drawio-libs/libs/fortinet/Fortinet_VM_Components.xml</add>
 </clibs>
+
+<template url="动态模型/阶段式建模：Rovio案例.xml" title="阶段式建模：Rovio案例"/>
+
 <template url="basic/classes.xml" title="classDiagram" libs="general;uml"/>
 <template url="basic/flowchart.xml" title="flowchart" libs="general;flowchart"/>
 <template url="basic/orgchart.xml" title="orgChart" libs="general;basic;arrows"/>
