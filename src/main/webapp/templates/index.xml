@@ -47,6 +47,9 @@
 
 <template url="动态模型/阶段式建模：Rovio案例.xml" title="阶段式建模：Rovio案例"/>
 <template url="动态模型/阶段式建模（1）.xml" title="阶段式建模（1）"/>
+<template url="动态模型/阶段式建模（2）.xml" title="阶段式建模（2）"/>
+<template url="动态模型/流程式建模（1）.xml" title="流程式建模（1）"/>
+<template url="动态模型/流程式建模（2）.xml" title="流程式建模（2）"/>
 
 <template url="basic/classes.xml" title="classDiagram" libs="general;uml"/>
 <template url="basic/flowchart.xml" title="flowchart" libs="general;flowchart"/>
