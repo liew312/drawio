@@ -48,8 +48,14 @@
 <template url="动态模型/阶段式建模：Rovio案例.xml" title="阶段式建模：Rovio案例"/>
 <template url="动态模型/阶段式建模（1）.xml" title="阶段式建模（1）"/>
 <template url="动态模型/阶段式建模（2）.xml" title="阶段式建模（2）"/>
+<template url="动态模型/阶段式建模（3）.xml" title="阶段式建模（3）"/>
+<template url="动态模型/流程式建模：苏宁集团案例.xml" title="流程式建模：苏宁集团案例"/>
 <template url="动态模型/流程式建模（1）.xml" title="流程式建模（1）"/>
 <template url="动态模型/流程式建模（2）.xml" title="流程式建模（2）"/>
+<template url="动态模型/转型式建模：HardWareZone案例.xml" title="转型式建模：HardWareZone案例"/>
+<template url="动态模型/转型式建模（1）.xml" title="转型式建模（1）"/>
+<template url="动态模型/路径依赖式建模：阿里巴巴案例.xml" title="路径依赖式建模：阿里巴巴案例"/>
+<template url="动态模型/路径依赖式建模（1）.xml" title="路径依赖式建模（1）"/>
 
 <template url="basic/classes.xml" title="classDiagram" libs="general;uml"/>
 <template url="basic/flowchart.xml" title="flowchart" libs="general;flowchart"/>
