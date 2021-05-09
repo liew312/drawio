@@ -58,16 +58,16 @@
 <template url="动态模型/路径依赖式建模（1）.xml" title="路径依赖式建模（1）"/>
 
 <template url="静态模型/分类式建模：人工智能在医疗领域应用.xml" title="分类式建模：人工智能在医疗领域应用"/>
-<template url="静态模型/分类式建模(1).xml" title="分类式建模(1)"/>
-<template url="静态模型/分类式建模(2).xml" title="分类式建模(2)"/>
-<template url="静态模型/分类式建模(3).xml" title="分类式建模(3)"/>
+<template url="静态模型/分类式建模（1）.xml" title="分类式建模（1）"/>
+<template url="静态模型/分类式建模（2）.xml" title="分类式建模（2）"/>
+<template url="静态模型/分类式建模（3）.xml" title="分类式建模（3）"/>
 <template url="静态模型/布局式建模：危机响应案例.xml" title="布局式建模：危机响应案例"/>
-<template url="静态模型/布局式建模(1).xml" title="布局式建模(1)"/>
+<template url="静态模型/布局式建模（1）.xml" title="布局式建模（1）"/>
 <template url="静态模型/对比式建模：东软和SAP案例.xml" title="对比式建模：东软和SAP案例"/>
-<template url="静态模型/对比式建模(1).xml" title="对比式建模(1)"/>
-<template url="静态模型/对比式建模(2).xml" title="对比式建模(2)"/>
+<template url="静态模型/对比式建模（1）.xml" title="对比式建模（1）"/>
+<template url="静态模型/对比式建模（2）.xml" title="对比式建模（2）"/>
 <template url="静态模型/multiStageModelTTNT.xml" title="multiStageModelTTNT"/>
-<template url="静态模型/多级式建模(1).xml" title="多级式建模(1)"/>
+<template url="静态模型/多级式建模（1）.xml" title="多级式建模（1）"/>
 
 
 <template url="basic/classes.xml" title="classDiagram" libs="general;uml"/>
