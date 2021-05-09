@@ -66,7 +66,6 @@
 <template url="静态模型/对比式建模：东软和SAP案例.xml" title="对比式建模：东软和SAP案例"/>
 <template url="静态模型/对比式建模(1).xml" title="对比式建模(1)"/>
 <template url="静态模型/对比式建模(2).xml" title="对比式建模(2)"/>
-<template url="静态模型/多级式建模：TT&T案例.xml" title="多级式建模：TT&T案例"/>
 
 <template url="basic/classes.xml" title="classDiagram" libs="general;uml"/>
 <template url="basic/flowchart.xml" title="flowchart" libs="general;flowchart"/>
