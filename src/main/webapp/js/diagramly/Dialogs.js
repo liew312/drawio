@@ -2986,8 +2986,8 @@ var NewDialog = function (
     firstInitUi = true;
 
   // Adds local basic templates
-  categories["basic"] = [{ title: "blankDiagram", select: false }];
-  var templates = categories["basic"];
+  //   categories["basic"] = [{ title: "blankDiagram", select: false }];
+  var templates;
 
   function initUi() {
     if (firstInitUi) {
