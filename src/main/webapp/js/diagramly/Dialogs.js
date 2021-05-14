@@ -2737,7 +2737,9 @@ var NewDialog = function (
     console.log("Create: ");
     console.log(typeof selectedElt);
     console.log(selectedElt);
-    console.log(selectedElt.title)
+    console.log(selectedElt.title);
+    sessionStorage.setItem("drawTitle", selectedElt.title);
+
     if (templateExtUrl) {
       if (!showName) {
         editorUi.hideDialog();
