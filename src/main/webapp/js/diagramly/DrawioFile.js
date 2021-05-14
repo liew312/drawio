@@ -1514,6 +1514,9 @@ DrawioFile.prototype.addUnsavedStatus = function(err)
 				msg = msg.substring(0, 60) + '...';
 			}
 
+				document
+          .getElementById("templateName")
+          .setAttribute("data-filesaved", "1");
 			var status = mxUtils.htmlEntities(mxResources.get('unsavedChangesClickHereToSave')) +
 				((msg != null && msg != '') ? ' (' + mxUtils.htmlEntities(msg) + ')' : '');
 			this.ui.editor.setStatus('<div title="'+ status +
