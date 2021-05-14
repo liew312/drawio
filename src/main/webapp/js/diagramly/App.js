@@ -4469,7 +4469,6 @@ App.prototype.saveFile = function(forceDialog, success)
 									name.indexOf('.') < 0 || /(\.drawio)$/i.test(name),
 									/(\.svg)$/i.test(name), /(\.html)$/i.test(name)),
 									null, mode, done, this.mode == null, folderId);
-								console.log("createFile or save");
 							}));
 						}
 						else if (mode != null)
