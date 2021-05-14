@@ -1835,6 +1835,7 @@ App.prototype.sanityCheck = function()
 
 	if (file != null && file.isModified() && file.isAutosave() && file.isOverdue())
 	{
+		document.getElementById("templateName").fileSaved= "1";
 		var evt = {category: 'WARN-FILE-' + file.getHash(),
 			action: ((file.savingFile) ? 'saving' : '') +
 			((file.savingFile && file.savingFileTime != null) ? '_' +
