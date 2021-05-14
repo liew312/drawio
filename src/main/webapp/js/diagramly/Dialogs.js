@@ -2817,6 +2817,10 @@ var NewDialog = function (
     templateRealUrl = realUrl;
     templateInfoObj = infoObj;
 
+    console.log("more console log");
+    console.log(selectedElt);
+    console.log(templateXml);
+
     selectedElt.style.backgroundColor = rightHighlight;
     selectedElt.style.border = rightHighlightBorder;
   }
