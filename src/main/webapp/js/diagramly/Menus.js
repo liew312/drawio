@@ -1041,6 +1041,12 @@
 					}
 				}
 
+				let templateName = "";
+				let templateAnchor = document.createElement("a");
+				templateAnchor.setAttribute("id","templateName");
+				templateAnchor.innerHTML=templateName;
+				document.body.appendChild(templateAnchor);
+
 				return menubar;
 			};
 		}
