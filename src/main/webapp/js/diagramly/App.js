@@ -1879,6 +1879,7 @@ App.prototype.sanityCheck = function()
 		// Resets possible stale state
 		this.spinner.stop();
 
+		console.log("unsaved changes 1")
 		this.showError(mxResources.get('unsavedChanges'), msg, mxResources.get('ignore'),
 			mxUtils.bind(this, function()
 			{
