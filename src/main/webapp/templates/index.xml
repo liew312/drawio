@@ -46,29 +46,35 @@
 </clibs>
 
  <!--Add 11 templates under dynamicModel-->
-<template url="dynamicModel/stagedModelRovio.xml" title="stagedModelRovio"/>
 <template url="dynamicModel/stagedModel1.xml" title="stagedModel1"/>
 <template url="dynamicModel/stagedModel2.xml" title="stagedModel2"/>
 <template url="dynamicModel/stagedModel3.xml" title="stagedModel3"/>
-<template url="dynamicModel/processModelSuning.xml" title="processModelSuning"/>
+<template url="dynamicModel/stagedModel4.xml" title="stagedModel4"/>
+
 <template url="dynamicModel/processModel1.xml" title="processModel1"/>
 <template url="dynamicModel/processModel2.xml" title="processModel2"/>
-<template url="dynamicModel/transformationModelHardWareZone.xml" title="transformationModelHardWareZone"/>
+<template url="dynamicModel/processModel3.xml" title="processModel3"/>
+
 <template url="dynamicModel/transformationModel1.xml" title="transformationModel1"/>
-<template url="dynamicModel/pathDependentModelAlibaba.xml" title="pathDependentModelAlibaba"/>
+<template url="dynamicModel/transformationModel2.xml" title="transformationModel2"/>
+
 <template url="dynamicModel/pathDependentModel1.xml" title="pathDependentModel1"/>
+<template url="dynamicModel/pathDependentModel2.xml" title="pathDependentModel2"/>
 
  <!--Add 11 templates under staticModel-->
-<template url="staticModel/classifiedModelAI.xml" title="classifiedModelAI"/>
 <template url="staticModel/classifiedModel1.xml" title="classifiedModel1"/>
 <template url="staticModel/classifiedModel2.xml" title="classifiedModel2"/>
 <template url="staticModel/classifiedModel3.xml" title="classifiedModel3"/>
-<template url="staticModel/layoutModelCrisis.xml" title="layoutModelCrisis"/>
+<template url="staticModel/classifiedModel4.xml" title="classifiedModel4"/>
+
 <template url="staticModel/layoutModel1.xml" title="layoutModel1"/>
-<template url="staticModel/comparativeModelSAP.xml" title="comparativeModelSAP"/>
+<template url="staticModel/layoutModel2.xml" title="layoutModel2"/>
+
 <template url="staticModel/comparativeModel1.xml" title="comparativeModel1"/>
 <template url="staticModel/comparativeModel2.xml" title="comparativeModel2"/>
-<template url="staticModel/multiStageModelTTNT.xml" title="multiStageModelTTNT"/>
+<template url="staticModel/comparativeModel3.xml" title="comparativeModel3"/>
+
 <template url="staticModel/multiStageModel1.xml" title="multiStageModel1"/>
+<template url="staticModel/multiStageModel2.xml" title="multiStageModel2"/>
 
 </templates>
