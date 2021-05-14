@@ -449,7 +449,6 @@ var SplashDialog = function (editorUi) {
   btn.style.width = "340px";
 
   mxUtils.write(btn, mxResources.get("openExistingDiagram"));
-console.log("Open diagram")
   mxEvent.addListener(btn, "click", function () {
     editorUi.actions.get("open").funct();
   });
@@ -2734,36 +2733,26 @@ var NewDialog = function (
   var templateInfoObj = null;
 
   function create() {
-    console.log("Create: ");
-    console.log(typeof selectedElt);
-    console.log(selectedElt);
-    console.log(selectedElt.title);
-console.log(urlParams);
     if (document.getElementById("templateName").getAttribute("data-filesaved")=="0"){
       document.getElementById("templateName").innerHTML = selectedElt.title;
 
     }
-    // sessionStorage.setItem("drawTitle", selectedElt.title);
 
     if (templateExtUrl) {
       if (!showName) {
         editorUi.hideDialog();
       }
-      console.log("case1");
       openExtDocCallback(templateExtUrl, templateInfoObj, nameInput.value);
     } else if (callback) {
       if (!showName) {
         editorUi.hideDialog();
       }
-      console.log("case2");
 
       callback(templateXml, nameInput.value, templateRealUrl, templateLibs);
     } else {
-      console.log("case3");
       var title = nameInput.value;
 
       if (title != null && title.length > 0) {
-        console.log("what is this")
         editorUi.pickFolder(
           editorUi.mode,
           function (folderId) {

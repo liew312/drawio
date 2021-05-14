@@ -1879,7 +1879,6 @@ App.prototype.sanityCheck = function()
 		// Resets possible stale state
 		this.spinner.stop();
 
-		console.log("unsaved changes 1")
 		this.showError(mxResources.get('unsavedChanges'), msg, mxResources.get('ignore'),
 			mxUtils.bind(this, function()
 			{
@@ -3329,7 +3328,6 @@ App.prototype.start = function()
 							}
 							else
 							{
-								console.log("pickfolder")
 								this.pickFolder(mode, mxUtils.bind(this, function(folderId)
 								{
 									this.createFile(filename, this.getFileData(true),
@@ -3889,7 +3887,6 @@ App.prototype.pickFile = function(mode)
 			{
 				window.showOpenFilePicker().then(mxUtils.bind(this, function(fileHandles)
 				{
-					console.log("fileopening1")
 					document.getElementById("templateName").innerHTML="";
 					document.getElementById("templateName").setAttribute("data-filesaved","1");
 					if (fileHandles != null && fileHandles.length > 0 &&
@@ -3906,7 +3903,7 @@ App.prototype.pickFile = function(mode)
 				}));
 			}
 			else if (mode == App.MODE_DEVICE && Graph.fileSupport)
-			{console.log("fileopening2");
+			{
 				if (this.openFileInputElt == null) 
 				{
 					var input = document.createElement('input');
@@ -3935,7 +3932,6 @@ App.prototype.pickFile = function(mode)
 			}
 			else
 			{
-				console.log("fileopening3");
 				this.hideDialog();
 				window.openNew = this.getCurrentFile() != null && !this.isDiagramEmpty();
 				window.baseUrl = this.getUrl();
@@ -4340,7 +4336,6 @@ App.prototype.saveLibrary = function(name, images, file, mode, noSpin, noReload,
 App.prototype.saveFile = function(forceDialog, success)
 {
 	var file = this.getCurrentFile();
-	console.log(file);
 	if (file != null)
 	{
 		// FIXME: Invoke for local files
@@ -4727,7 +4722,6 @@ App.prototype.createFile = function(title, data, libs, mode, done, replace, fold
 			else if (!tempFile && mode == App.MODE_DEVICE && EditorUi.nativeFileSupport)
 			{
 				complete();
-				console.log("saving to device")
 				this.showSaveFilePicker(mxUtils.bind(this, function(fileHandle, desc)
 				{
 					var file = new LocalFile(this, data, desc.name, null, fileHandle, desc);
@@ -4735,7 +4729,6 @@ App.prototype.createFile = function(title, data, libs, mode, done, replace, fold
 					file.saveFile(desc.name, false, mxUtils.bind(this, function()
 					{
 						this.fileCreated(file, libs, replace, done, clibs);
-						console.log("saved to device succefull");
 						document.getElementById("templateName").setAttribute("data-filesaved","1");
 
 					}), error, true);
@@ -4938,7 +4931,6 @@ App.prototype.loadFile = function(id, sameWindow, file, success, force)
 	}
 	
 	this.hideDialog();
-	console.log("loadng file")
 	
 	var fn2 = mxUtils.bind(this, function()
 	{
@@ -4956,7 +4948,6 @@ App.prototype.loadFile = function(id, sameWindow, file, success, force)
 
 				if (!isLocalStorage)
 				{
-						console.log("loadng file1");
 
 					this.handleError({message: mxResources.get('serviceUnavailableOrBlocked')}, mxResources.get('errorLoadingFile'), mxUtils.bind(this, function()
 					{
@@ -4966,7 +4957,6 @@ App.prototype.loadFile = function(id, sameWindow, file, success, force)
 				}
 				else
 				{
-					console.log("loadng file2");
 
 					var error = mxUtils.bind(this, function (e)
 					{
@@ -5002,7 +4992,6 @@ App.prototype.loadFile = function(id, sameWindow, file, success, force)
 				// File already loaded
 				this.spinner.stop();
 				this.fileLoaded(file);
-						console.log("file already loaded");
 
 				if (success != null)
 				{
@@ -6028,7 +6017,6 @@ App.prototype.save = function(name, done)
 		
 		var success = mxUtils.bind(this, function()
 		{
-			console.log("file saved succesfully")
 			document
               .getElementById("templateName")
               .setAttribute("data-filesaved", "1");
