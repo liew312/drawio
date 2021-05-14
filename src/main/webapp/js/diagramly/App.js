@@ -1642,6 +1642,25 @@ App.prototype.init = function()
 		 */
 		this.bg = this.createBackground();
 		document.body.appendChild(this.bg);
+
+		let parentDiv = document.createElement("div");
+		parentDiv.style.position = "absolute";
+		parentDiv.style.left = "50%";
+
+		let templateName = "";
+		let templateDiv = document.createElement("div");
+		templateDiv.style.display = "inline-block";
+		templateDiv.style.paddingTop = "5px";
+		templateDiv.style.paddingLeft = "4px";
+		templateDiv.style.zIndex = "1";
+		templateDiv.style.position = "relative";
+		templateDiv.style.left = "-50%";
+		templateDiv.setAttribute("id","templateName");
+		templateDiv.innerHTML=templateName;
+
+		parentDiv.appendChild(templateDiv);
+		document.body.appendChild(parentDiv);
+
 		this.diagramContainer.style.visibility = 'hidden';
 		this.formatContainer.style.visibility = 'hidden';
 		this.hsplit.style.display = 'none';
