@@ -3324,6 +3324,7 @@ App.prototype.start = function()
 							}
 							else
 							{
+								console.log("pickfolder")
 								this.pickFolder(mode, mxUtils.bind(this, function(folderId)
 								{
 									this.createFile(filename, this.getFileData(true),
@@ -6009,6 +6010,7 @@ App.prototype.save = function(name, done)
 		
 		var success = mxUtils.bind(this, function()
 		{
+			console.log("file saved succesfully")
 			file.handleFileSuccess(true);
 
 			if (done != null)
