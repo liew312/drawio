@@ -1041,12 +1041,25 @@
 					}
 				}
 
-				let templateName = "";
-				let templateAnchor = document.createElement("a");
-				templateAnchor.setAttribute("id","templateName");
-				templateAnchor.innerHTML=templateName;
-				document.body.appendChild(templateAnchor);
+				let parentDiv = documentElement("div");
+				parentDiv.style.position = "absolute";
+				parentDiv.style.left = "50%";
+				parentDiv.style.display = "in-block";
 
+				let templateName = "";
+				let templateDiv = document.createElement("div");
+				templateDiv.style.display = "in-block";
+				templateDiv.style.width = "16px";
+       	 		templateDiv.style.paddingTop = "5px";
+        		templateDiv.style.paddingLeft = "4px";
+        		templateDiv.style.zIndex = "1";
+				templateDiv.style.position = "relative";
+				templateDiv.style.left = "-50%";
+				templateDiv.setAttribute("id","templateName");
+				templateDiv.innerHTML=templateName;
+
+				parentDiv.appendChild(templateDiv);
+				document.body.appendChild(parentDiv);
 				return menubar;
 			};
 		}

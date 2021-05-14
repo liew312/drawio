@@ -2738,7 +2738,8 @@ var NewDialog = function (
     console.log(typeof selectedElt);
     console.log(selectedElt);
     console.log(selectedElt.title);
-    sessionStorage.setItem("drawTitle", selectedElt.title);
+    document.getElementById("templateName").innerHTML = selectedElt.title;
+    // sessionStorage.setItem("drawTitle", selectedElt.title);
 
     if (templateExtUrl) {
       if (!showName) {
