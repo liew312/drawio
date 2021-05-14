@@ -1041,7 +1041,7 @@
 					}
 				}
 
-				let parentDiv = documentElement("div");
+				let parentDiv = document.createElement("div");
 				parentDiv.style.position = "absolute";
 				parentDiv.style.left = "50%";
 				parentDiv.style.display = "in-block";
