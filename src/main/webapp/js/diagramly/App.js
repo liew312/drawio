@@ -3890,6 +3890,7 @@ App.prototype.pickFile = function(mode)
 				window.showOpenFilePicker().then(mxUtils.bind(this, function(fileHandles)
 				{
 					console.log("fileopening1")
+					document.getElementById("templateName").innerHTML="";
 					document.getElementById("templateName").setAttribute("data-filesaved","1");
 					if (fileHandles != null && fileHandles.length > 0 &&
 						this.spinner.spin(document.body, mxResources.get('loading')))
