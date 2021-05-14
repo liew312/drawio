@@ -992,6 +992,7 @@
 					
 					if (langMenu != null)
 					{
+						console.log("adding language")
 						var elt = menubar.addMenu('', langMenu.funct);
 						elt.setAttribute('title', mxResources.get('language'));
 						elt.style.width = '16px';
