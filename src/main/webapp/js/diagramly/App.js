@@ -4998,6 +4998,7 @@ App.prototype.loadFile = function(id, sameWindow, file, success, force)
 				// File already loaded
 				this.spinner.stop();
 				this.fileLoaded(file);
+						console.log("file already loaded");
 
 				if (success != null)
 				{
