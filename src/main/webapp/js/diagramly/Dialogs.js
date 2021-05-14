@@ -449,7 +449,7 @@ var SplashDialog = function (editorUi) {
   btn.style.width = "340px";
 
   mxUtils.write(btn, mxResources.get("openExistingDiagram"));
-
+console.log("Open diagram")
   mxEvent.addListener(btn, "click", function () {
     editorUi.actions.get("open").funct();
   });
