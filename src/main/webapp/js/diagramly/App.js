@@ -4334,7 +4334,7 @@ App.prototype.saveLibrary = function(name, images, file, mode, noSpin, noReload,
 App.prototype.saveFile = function(forceDialog, success)
 {
 	var file = this.getCurrentFile();
-	
+	console.log(file);
 	if (file != null)
 	{
 		// FIXME: Invoke for local files
