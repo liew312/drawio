@@ -2745,15 +2745,17 @@ var NewDialog = function (
       if (!showName) {
         editorUi.hideDialog();
       }
-
+      console.log("case1");
       openExtDocCallback(templateExtUrl, templateInfoObj, nameInput.value);
     } else if (callback) {
       if (!showName) {
         editorUi.hideDialog();
       }
+      console.log("case2");
 
       callback(templateXml, nameInput.value, templateRealUrl, templateLibs);
     } else {
+      console.log("case3");
       var title = nameInput.value;
 
       if (title != null && title.length > 0) {
