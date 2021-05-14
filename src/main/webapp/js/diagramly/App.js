@@ -4726,6 +4726,8 @@ App.prototype.createFile = function(title, data, libs, mode, done, replace, fold
 					file.saveFile(desc.name, false, mxUtils.bind(this, function()
 					{
 						this.fileCreated(file, libs, replace, done, clibs);
+						console.log("saved to device succefull");
+
 					}), error, true);
 				}), mxUtils.bind(this, function(e)
 				{
