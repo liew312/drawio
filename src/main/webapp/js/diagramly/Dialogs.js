@@ -2737,6 +2737,7 @@ var NewDialog = function (
     console.log("Create: ");
     console.log(typeof selectedElt);
     console.log(selectedElt);
+    console.log(selectedElt.title)
     if (templateExtUrl) {
       if (!showName) {
         editorUi.hideDialog();
