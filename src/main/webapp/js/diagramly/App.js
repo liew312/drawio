@@ -3889,6 +3889,7 @@ App.prototype.pickFile = function(mode)
 			{
 				window.showOpenFilePicker().then(mxUtils.bind(this, function(fileHandles)
 				{
+					console.log("fileopening1")
 					if (fileHandles != null && fileHandles.length > 0 &&
 						this.spinner.spin(document.body, mxResources.get('loading')))
 					{
@@ -3903,7 +3904,7 @@ App.prototype.pickFile = function(mode)
 				}));
 			}
 			else if (mode == App.MODE_DEVICE && Graph.fileSupport)
-			{
+			{console.log("fileopening2");
 				if (this.openFileInputElt == null) 
 				{
 					var input = document.createElement('input');
@@ -3932,6 +3933,7 @@ App.prototype.pickFile = function(mode)
 			}
 			else
 			{
+				console.log("fileopening3");
 				this.hideDialog();
 				window.openNew = this.getCurrentFile() != null && !this.isDiagramEmpty();
 				window.baseUrl = this.getUrl();
