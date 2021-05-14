@@ -1656,6 +1656,8 @@ App.prototype.init = function()
 		templateDiv.style.position = "relative";
 		templateDiv.style.left = "-50%";
 		templateDiv.setAttribute("id","templateName");
+		templateDiv.setAttribute("fileSaved", "0");
+
 		templateDiv.innerHTML=templateName;
 
 		parentDiv.appendChild(templateDiv);

@@ -2738,7 +2738,11 @@ var NewDialog = function (
     console.log(typeof selectedElt);
     console.log(selectedElt);
     console.log(selectedElt.title);
-    document.getElementById("templateName").innerHTML = selectedElt.title;
+
+    if (document.getElementById("templateName").fileSaved!="0"){
+      document.getElementById("templateName").innerHTML = selectedElt.title;
+
+    }
     // sessionStorage.setItem("drawTitle", selectedElt.title);
 
     if (templateExtUrl) {
@@ -2759,6 +2763,7 @@ var NewDialog = function (
       var title = nameInput.value;
 
       if (title != null && title.length > 0) {
+        console.log("what is this")
         editorUi.pickFolder(
           editorUi.mode,
           function (folderId) {
