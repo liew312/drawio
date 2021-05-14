@@ -2738,7 +2738,7 @@ var NewDialog = function (
     console.log(typeof selectedElt);
     console.log(selectedElt);
     console.log(selectedElt.title);
-
+console.log(urlParams);
     if (document.getElementById("templateName").getAttribute("data-filesaved")=="0"){
       document.getElementById("templateName").innerHTML = selectedElt.title;
 
