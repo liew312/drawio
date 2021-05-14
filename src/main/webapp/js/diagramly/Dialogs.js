@@ -2741,67 +2741,51 @@ var NewDialog = function (
     document.getElementById("templateName").innerHTML = selectedElt.title;
     // sessionStorage.setItem("drawTitle", selectedElt.title);
 
-    	var file = this.getCurrentFile();
-
-      if (
-        file != null &&
-        file.isModified() &&
-        file.isAutosave() &&
-        file.isOverdue()
-      ){
-        console.log("file not saved")
-      }else{console.log("file saved")}
-
-      if (file.isModified() ){
-        console.log("is modified")
-      }else{
-        console.log("not modified")
+    if (templateExtUrl) {
+      if (!showName) {
+        editorUi.hideDialog();
       }
-        if (templateExtUrl) {
-          if (!showName) {
-            editorUi.hideDialog();
-          }
-          console.log("case1");
-          openExtDocCallback(templateExtUrl, templateInfoObj, nameInput.value);
-        } else if (callback) {
-          if (!showName) {
-            editorUi.hideDialog();
-          }
-          console.log("case2");
+      console.log("case1");
+      openExtDocCallback(templateExtUrl, templateInfoObj, nameInput.value);
+    } else if (callback) {
+      if (!showName) {
+        editorUi.hideDialog();
+      }
+      console.log("case2");
 
-          callback(templateXml, nameInput.value, templateRealUrl, templateLibs);
-        } else {
-          console.log("case3");
-          var title = nameInput.value;
+      callback(templateXml, nameInput.value, templateRealUrl, templateLibs);
+    } else {
+      console.log("case3");
+      var title = nameInput.value;
 
-          if (title != null && title.length > 0) {
-            editorUi.pickFolder(
-              editorUi.mode,
-              function (folderId) {
-                editorUi.createFile(
-                  title,
-                  templateXml,
-                  templateLibs != null && templateLibs.length > 0
-                    ? templateLibs
-                    : null,
-                  null,
-                  function () {
-                    editorUi.hideDialog();
-                  },
-                  null,
-                  folderId,
-                  null,
-                  templateClibs != null && templateClibs.length > 0
-                    ? templateClibs
-                    : null
-                );
+      if (title != null && title.length > 0) {
+        editorUi.pickFolder(
+          editorUi.mode,
+          function (folderId) {
+            editorUi.createFile(
+              title,
+              templateXml,
+              templateLibs != null && templateLibs.length > 0
+                ? templateLibs
+                : null,
+              null,
+              function () {
+                editorUi.hideDialog();
               },
-              editorUi.mode != App.MODE_GOOGLE ||
-                editorUi.stateArg == null ||
-                editorUi.stateArg.folderId == null
+              null,
+              folderId,
+              null,
+              templateClibs != null && templateClibs.length > 0
+                ? templateClibs
+                : null
             );
-          }
-        }
+          },
+          editorUi.mode != App.MODE_GOOGLE ||
+            editorUi.stateArg == null ||
+            editorUi.stateArg.folderId == null
+        );
+      }
+    }
   }
 
   var div = document.createElement("div");
