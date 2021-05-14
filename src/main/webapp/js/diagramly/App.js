@@ -4718,7 +4718,7 @@ App.prototype.createFile = function(title, data, libs, mode, done, replace, fold
 			else if (!tempFile && mode == App.MODE_DEVICE && EditorUi.nativeFileSupport)
 			{
 				complete();
-				
+				console.log("saving to device")
 				this.showSaveFilePicker(mxUtils.bind(this, function(fileHandle, desc)
 				{
 					var file = new LocalFile(this, data, desc.name, null, fileHandle, desc);
@@ -6011,7 +6011,8 @@ App.prototype.save = function(name, done)
 		var success = mxUtils.bind(this, function()
 		{
 			console.log("file saved succesfully")
-			file.handleFileSuccess(true);
+			document.getElementById("templateName").fileSaved="1"
+        	file.handleFileSuccess(true);
 
 			if (done != null)
 			{
