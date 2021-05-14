@@ -4934,6 +4934,7 @@ App.prototype.loadFile = function(id, sameWindow, file, success, force)
 	}
 	
 	this.hideDialog();
+	console.log("loadng file")
 	
 	var fn2 = mxUtils.bind(this, function()
 	{
