@@ -1656,7 +1656,7 @@ App.prototype.init = function()
 		templateDiv.style.position = "relative";
 		templateDiv.style.left = "-50%";
 		templateDiv.setAttribute("id","templateName");
-		templateDiv.setAttribute("fileSaved", "0");
+		templateDiv.setAttribute("filesaved", "0");
 
 		templateDiv.innerHTML=templateName;
 
@@ -1835,7 +1835,7 @@ App.prototype.sanityCheck = function()
 
 	if (file != null && file.isModified() && file.isAutosave() && file.isOverdue())
 	{
-		document.getElementById("templateName").fileSaved= "1";
+		document.getElementById("templateName").filesaved = "1";
 		var evt = {category: 'WARN-FILE-' + file.getHash(),
 			action: ((file.savingFile) ? 'saving' : '') +
 			((file.savingFile && file.savingFileTime != null) ? '_' +
@@ -4728,6 +4728,7 @@ App.prototype.createFile = function(title, data, libs, mode, done, replace, fold
 					{
 						this.fileCreated(file, libs, replace, done, clibs);
 						console.log("saved to device succefull");
+						document.getElementById("templateName").filesaved = "1";
 
 					}), error, true);
 				}), mxUtils.bind(this, function(e)
@@ -6014,7 +6015,7 @@ App.prototype.save = function(name, done)
 		var success = mxUtils.bind(this, function()
 		{
 			console.log("file saved succesfully")
-			document.getElementById("templateName").fileSaved="1"
+			document.getElementById("templateName").filesaved = "1";
         	file.handleFileSuccess(true);
 
 			if (done != null)
