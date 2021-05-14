@@ -2554,32 +2554,7 @@ App.prototype.createBackground = function()
 			Editor.useLocalStorage = this.mode == App.MODE_BROWSER;
 		}
 
-		if (this.appIcon != null)
-		{
-			var file = this.getCurrentFile();
-			mode = (file != null) ? file.getMode() : mode;
-			
-			if (mode == App.MODE_GOOGLE)
-			{
-				this.appIcon.setAttribute('title', mxResources.get('openIt', [mxResources.get('googleDrive')]));
-				this.appIcon.style.cursor = 'pointer';
-			}
-			else if (mode == App.MODE_DROPBOX)
-			{
-				this.appIcon.setAttribute('title', mxResources.get('openIt', [mxResources.get('dropbox')]));
-				this.appIcon.style.cursor = 'pointer';
-			}
-			else if (mode == App.MODE_ONEDRIVE)
-			{
-				this.appIcon.setAttribute('title', mxResources.get('openIt', [mxResources.get('oneDrive')]));
-				this.appIcon.style.cursor = 'pointer';
-			}
-			else
-			{
-				this.appIcon.removeAttribute('title');
-				this.appIcon.style.cursor = (mode == App.MODE_DEVICE) ? 'pointer' : 'default';
-			}
-		}
+	
 		
 		if (remember)
 		{
@@ -6551,89 +6526,14 @@ App.prototype.updateHeader = function()
 {
 	if (this.menubar != null)
 	{
-		this.appIcon = document.createElement('a');
-		this.appIcon.style.display = 'block';
-		this.appIcon.style.position = 'absolute';
-		this.appIcon.style.width = '32px';
-		this.appIcon.style.height = (this.menubarHeight - 28) + 'px';
-		this.appIcon.style.margin = '14px 0px 8px 16px';
-		this.appIcon.style.opacity = '0.85';
-		this.appIcon.style.borderRadius = '3px';
 		
-		if (uiTheme != 'dark')
-		{
-			this.appIcon.style.backgroundColor = '#f08705';
-		}
-		
-		mxEvent.disableContextMenu(this.appIcon);
-		
-		mxEvent.addListener(this.appIcon, 'click', mxUtils.bind(this, function(evt)
-		{
-			this.appIconClicked(evt);
-		}));
 		
 		// LATER: Use Alpha image loader in IE6
 		// NOTE: This uses the diagram bit of the old logo as it looks better in this case
 		//this.appIcon.style.filter = 'progid:DXImageTransform.Microsoft.AlphaImageLoader(src=' + IMAGE_PATH + '/logo-white.png,sizingMethod=\'scale\')';
-		var logo = null;
-		this.appIcon.style.backgroundImage = logo;		
-		this.appIcon.style.backgroundPosition = 'center center';
-		this.appIcon.style.backgroundSize = '100% 100%';
-		this.appIcon.style.backgroundRepeat = 'no-repeat';
 		
-		mxUtils.setPrefixedStyle(this.appIcon.style, 'transition', 'all 125ms linear');
-	
-		mxEvent.addListener(this.appIcon, 'mouseover', mxUtils.bind(this, function()
-		{
-			var file = this.getCurrentFile();
-			
-			if (file != null)
-			{
-				var mode = file.getMode();
-				
-				if (mode == App.MODE_GOOGLE)
-				{
-					this.appIcon.style.backgroundImage = 'url(' + IMAGE_PATH + '/google-drive-logo-white.svg)';
-					this.appIcon.style.backgroundSize = '70% 70%';
-				}
-				else if (mode == App.MODE_DROPBOX)
-				{
-					this.appIcon.style.backgroundImage = 'url(' + IMAGE_PATH + '/dropbox-logo-white.svg)';
-					this.appIcon.style.backgroundSize = '70% 70%';
-				}
-				else if (mode == App.MODE_ONEDRIVE)
-				{
-					this.appIcon.style.backgroundImage = 'url(' + IMAGE_PATH + '/onedrive-logo-white.svg)';
-					this.appIcon.style.backgroundSize = '70% 70%';
-				}
-				else if (mode == App.MODE_GITHUB)
-				{
-					this.appIcon.style.backgroundImage = 'url(' + IMAGE_PATH + '/github-logo-white.svg)';
-					this.appIcon.style.backgroundSize = '70% 70%';
-				}
-				else if (mode == App.MODE_GITLAB)
-				{
-					this.appIcon.style.backgroundImage = 'url(' + IMAGE_PATH + '/gitlab-logo-white.svg)';
-					this.appIcon.style.backgroundSize = '100% 100%';
-				}
-				else if (mode == App.MODE_TRELLO)
-				{
-					this.appIcon.style.backgroundImage = 'url(' + IMAGE_PATH + '/trello-logo-white-orange.svg)';
-					this.appIcon.style.backgroundSize = '70% 70%';
-				}
-			}
-		}));
 		
-		mxEvent.addListener(this.appIcon, 'mouseout', mxUtils.bind(this, function()
-		{
-			this.appIcon.style.backgroundImage = logo;
-			this.appIcon.style.backgroundSize = '90% 90%';
-		}));
-		
-		if (urlParams['embed'] != '1')
-		{
-			this.menubarContainer.appendChild(this.appIcon);
-		}
+
 	
 		this.fnameWrapper = document.createElement('div');
 		this.fnameWrapper.style.position = 'absolute';
@@ -6873,7 +6773,7 @@ App.prototype.toggleCompactMode = function(visible)
 		this.menubar.container.style.top = '34px';
 		this.toolbar.container.style.paddingLeft = '16px';
 		this.buttonContainer.style.visibility = 'visible';
-		this.appIcon.style.display = 'block';
+
 		this.fnameWrapper.style.display = 'block';
 		this.fnameWrapper.style.visibility = 'visible';
 		this.menubarHeight = App.prototype.menubarHeight;
@@ -6889,7 +6789,6 @@ App.prototype.toggleCompactMode = function(visible)
 		this.menubar.container.style.top = '0px';
 		this.toolbar.container.style.paddingLeft = '8px';
 		this.buttonContainer.style.visibility = 'hidden';
-		this.appIcon.style.display = 'none';
 		this.fnameWrapper.style.display = 'none';
 		this.fnameWrapper.style.visibility = 'hidden';
 		this.menubarHeight = EditorUi.prototype.menubarHeight;

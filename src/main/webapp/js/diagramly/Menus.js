@@ -1044,12 +1044,10 @@
 				let parentDiv = document.createElement("div");
 				parentDiv.style.position = "absolute";
 				parentDiv.style.left = "50%";
-				parentDiv.style.display = "in-block";
 
 				let templateName = "";
 				let templateDiv = document.createElement("div");
-				templateDiv.style.display = "in-block";
-				templateDiv.style.width = "16px";
+				templateDiv.style.display = "inline-block";
        	 		templateDiv.style.paddingTop = "5px";
         		templateDiv.style.paddingLeft = "4px";
         		templateDiv.style.zIndex = "1";
