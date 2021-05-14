@@ -2739,7 +2739,7 @@ var NewDialog = function (
     console.log(selectedElt);
     console.log(selectedElt.title);
 
-    if (document.getElementById("templateName").getAttribute("data-filesaved")!="0"){
+    if (document.getElementById("templateName").getAttribute("data-filesaved")=="0"){
       document.getElementById("templateName").innerHTML = selectedElt.title;
 
     }
