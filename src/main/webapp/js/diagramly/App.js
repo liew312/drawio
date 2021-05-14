@@ -4952,6 +4952,8 @@ App.prototype.loadFile = function(id, sameWindow, file, success, force)
 
 				if (!isLocalStorage)
 				{
+						console.log("loadng file1");
+
 					this.handleError({message: mxResources.get('serviceUnavailableOrBlocked')}, mxResources.get('errorLoadingFile'), mxUtils.bind(this, function()
 					{
 						var tempFile = this.getCurrentFile();
@@ -4960,6 +4962,8 @@ App.prototype.loadFile = function(id, sameWindow, file, success, force)
 				}
 				else
 				{
+					console.log("loadng file2");
+
 					var error = mxUtils.bind(this, function (e)
 					{
 						this.handleError(e, mxResources.get('errorLoadingFile'), mxUtils.bind(this, function()
