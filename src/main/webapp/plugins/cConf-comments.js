@@ -30,6 +30,9 @@ Draw.loadPlugin(function(ui)
 	function setModified()
 	{
 		ui.editor.setStatus(mxUtils.htmlEntities(mxResources.get('unsavedChanges')));
+			document
+                  .getElementById("templateName")
+                  .setAttribute("data-filesaved", "1");
 		ui.editor.setModified(true);	
 	};
 	

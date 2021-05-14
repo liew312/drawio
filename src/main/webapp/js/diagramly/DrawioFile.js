@@ -1487,7 +1487,9 @@ DrawioFile.prototype.addUnsavedStatus = function(err)
 		if (err instanceof Error && err.message != null && err.message != '')
 		{
 			var status = mxUtils.htmlEntities(mxResources.get('unsavedChanges'));
-			
+				document
+                  .getElementById("templateName")
+                  .setAttribute("data-filesaved", "1");
 			this.ui.editor.setStatus('<div title="'+ status +
 				'" class="geStatusAlert" style="overflow:hidden;">' + status +
 				' (' + mxUtils.htmlEntities(err.message) + ')</div>');
@@ -1532,7 +1534,9 @@ DrawioFile.prototype.addUnsavedStatus = function(err)
 			else
 			{
 				var status = mxUtils.htmlEntities(mxResources.get('unsavedChanges'));
-				
+					document
+                  .getElementById("templateName")
+                  .setAttribute("data-filesaved", "1");
 				this.ui.editor.setStatus('<div title="'+ status +
 					'" class="geStatusAlert" style="overflow:hidden;">' + status +
 					' (' + mxUtils.htmlEntities(err.message) + ')</div>');
