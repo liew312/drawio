@@ -2734,6 +2734,9 @@ var NewDialog = function (
   var templateInfoObj = null;
 
   function create() {
+    console.log("Create: ");
+    console.log(typeof selectedElt);
+    console.log(selectedElt);
     if (templateExtUrl) {
       if (!showName) {
         editorUi.hideDialog();
@@ -2816,10 +2819,6 @@ var NewDialog = function (
     templateExtUrl = extUrl;
     templateRealUrl = realUrl;
     templateInfoObj = infoObj;
-
-    console.log("more console log");
-    console.log(selectedElt);
-    console.log(templateXml);
 
     selectedElt.style.backgroundColor = rightHighlight;
     selectedElt.style.border = rightHighlightBorder;
