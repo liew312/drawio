@@ -1088,6 +1088,9 @@ Actions.prototype.init = function()
 		
 		graph.model.execute(change);
 	});
+
+	console.log("toggle collapse2");
+
 	action.setToggleAction(true);
 	action.setSelectedCallback(function() { return graph.foldingEnabled; });
 	action.isEnabled = isGraphEnabled;

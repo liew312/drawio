@@ -6762,12 +6762,16 @@ App.prototype.updateHeader = function()
 			mxEvent.addListener(this.toggleElement, (mxClient.IS_POINTER) ? 'pointerdown' : 'mousedown',
 	        	mxUtils.bind(this, function(evt)
 	    	{
+						console.log("toggle collapse3");
+
 				evt.preventDefault();
 			}));
 	
 			// Toggles compact mode
 			mxEvent.addListener(this.toggleElement, 'click', mxUtils.bind(this, function(evt)
 			{
+										console.log("toggle collapse4");
+
 				this.toggleCompactMode();
 				mxEvent.consume(evt);
 			}));
