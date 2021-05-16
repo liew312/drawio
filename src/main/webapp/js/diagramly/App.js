@@ -1650,9 +1650,8 @@ App.prototype.init = function()
 		// set templateDiv
 		console.log(localStorage.getItem("templateName"))
 
-		let templateName = localStorage.getItem("templateName")?localStorage.getItem("templateName"):"";
-		localStorage.setItem("templateName","");
-		
+		let templateName = "";
+
 		let templateDiv = document.createElement("div");
 		templateDiv.style.display = "inline-block";
 		templateDiv.style.paddingTop = "5px";
@@ -1661,7 +1660,14 @@ App.prototype.init = function()
 		templateDiv.style.position = "relative";
 		templateDiv.style.left = "-50%";
 		templateDiv.setAttribute("id","templateName");
-		templateDiv.setAttribute("data-filesaved", "0");
+
+		if (localStorage.getItem("templateName")&&localStorage.getItem("templateName")!=""){
+			templateName=localStorage.getItem("templateName")
+			localStorage.setItem("templateName", "");
+			templateDiv.setAttribute("data-filesaved", "1");
+		}else{
+			templateDiv.setAttribute("data-filesaved", "0");
+		}
 
 		templateDiv.innerHTML=templateName;
 
