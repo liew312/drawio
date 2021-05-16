@@ -590,23 +590,24 @@
 			}
 		}));
 
-		editorUi.actions.put('exportSvg', new Action(mxResources.get('formatSvg') + '...', function()
-		{
-			editorUi.showExportDialog(mxResources.get('formatSvg'), true, mxResources.get('export'),
-				'https://www.diagrams.net/doc/faq/export-diagram',
-				mxUtils.bind(this, function(scale, transparentBackground, ignoreSelection, addShadow, editable,
-					embedImages, border, cropImage, currentPage, linkTarget, grid, keepTheme, exportType)
-				{
-					var val = parseInt(scale);
+		// removeSVG
+		// editorUi.actions.put('exportSvg', new Action(mxResources.get('formatSvg') + '...', function()
+		// {
+		// 	editorUi.showExportDialog(mxResources.get('formatSvg'), true, mxResources.get('export'),
+		// 		'https://www.diagrams.net/doc/faq/export-diagram',
+		// 		mxUtils.bind(this, function(scale, transparentBackground, ignoreSelection, addShadow, editable,
+		// 			embedImages, border, cropImage, currentPage, linkTarget, grid, keepTheme, exportType)
+		// 		{
+		// 			var val = parseInt(scale);
 					
-					if (!isNaN(val) && val > 0)
-					{
-						editorUi.exportSvg(val / 100, transparentBackground, ignoreSelection,
-							addShadow, editable, embedImages, border, !cropImage, false,
-							linkTarget, keepTheme, exportType);
-					}
-				}), true, null, 'svg', true);
-		}));
+		// 			if (!isNaN(val) && val > 0)
+		// 			{
+		// 				editorUi.exportSvg(val / 100, transparentBackground, ignoreSelection,
+		// 					addShadow, editable, embedImages, border, !cropImage, false,
+		// 					linkTarget, keepTheme, exportType);
+		// 			}
+		// 		}), true, null, 'svg', true);
+		// }));
 		
 		editorUi.actions.put('exportPng', new Action(mxResources.get('formatPng') + '...', function()
 		{
@@ -812,35 +813,36 @@
 			return this[name] != null && this[name].window.isVisible();
 		}));
 		
-		editorUi.actions.put('exportVsdx', new Action(mxResources.get('formatVsdx') + ' (beta)...', function()
-		{
-			var noPages = editorUi.pages == null || editorUi.pages.length <= 1;
+		//removeVSDX
+		// editorUi.actions.put('exportVsdx', new Action(mxResources.get('formatVsdx') + ' (beta)...', function()
+		// {
+		// 	var noPages = editorUi.pages == null || editorUi.pages.length <= 1;
 			
-			if (noPages)
-			{
-				editorUi.exportVisio();
-			}
-			else
-			{
-				var div = document.createElement('div');
-				div.style.whiteSpace = 'nowrap';
+		// 	if (noPages)
+		// 	{
+		// 		editorUi.exportVisio();
+		// 	}
+		// 	else
+		// 	{
+		// 		var div = document.createElement('div');
+		// 		div.style.whiteSpace = 'nowrap';
 
-				var hd = document.createElement('h3');
-				mxUtils.write(hd, mxResources.get('formatVsdx'));
-				hd.style.cssText = 'width:100%;text-align:center;margin-top:0px;margin-bottom:4px';
-				div.appendChild(hd);
+		// 		var hd = document.createElement('h3');
+		// 		mxUtils.write(hd, mxResources.get('formatVsdx'));
+		// 		hd.style.cssText = 'width:100%;text-align:center;margin-top:0px;margin-bottom:4px';
+		// 		div.appendChild(hd);
 				
-				var pages = editorUi.addCheckbox(div, mxResources.get('allPages'), !noPages, noPages);
-				pages.style.marginBottom = '16px';
+		// 		var pages = editorUi.addCheckbox(div, mxResources.get('allPages'), !noPages, noPages);
+		// 		pages.style.marginBottom = '16px';
 				
-				var dlg = new CustomDialog(editorUi, div, mxUtils.bind(this, function()
-				{
-					editorUi.exportVisio(!pages.checked);
-				}), null, mxResources.get('export'));
+		// 		var dlg = new CustomDialog(editorUi, div, mxUtils.bind(this, function()
+		// 		{
+		// 			editorUi.exportVisio(!pages.checked);
+		// 		}), null, mxResources.get('export'));
 				
-				editorUi.showDialog(dlg.container, 300, 110, true, true);
-			}
-		}));
+		// 		editorUi.showDialog(dlg.container, 300, 110, true, true);
+		// 	}
+		// }));
 		
 		if (isLocalStorage && localStorage != null && urlParams['embed'] != '1')
 		{
@@ -2145,7 +2147,8 @@
 				this.addMenuItems(menu, ['exportPng', 'exportJpg'], parent);
 			}
 			
-			this.addMenuItems(menu, ['exportSvg', '-'], parent);
+			//removeSVG
+			// this.addMenuItems(menu, ['exportSvg', '-'], parent);
 			
 			// Redirects export to PDF to print in Chrome App
 			if (editorUi.isOffline() || editorUi.printPdfExport)
@@ -2158,18 +2161,22 @@
 				this.addMenuItems(menu, ['exportPdf'], parent);
 			}
 
-			if (!mxClient.IS_IE && (typeof(VsdxExport) !== 'undefined' || !editorUi.isOffline()))
-			{
-				this.addMenuItems(menu, ['exportVsdx'], parent);
-			}
+			//removeVSDX
+			// if (!mxClient.IS_IE && (typeof(VsdxExport) !== 'undefined' || !editorUi.isOffline()))
+			// {
+			// 	this.addMenuItems(menu, ['exportVsdx'], parent);
+			// }
 
-			this.addMenuItems(menu, ['-', 'exportHtml', 'exportXml', 'exportUrl'], parent);
+			//remove HTML URL
+			//this.addMenuItems(menu, ['-', 'exportHtml', 'exportXml', 'exportUrl'], parent);
+			this.addMenuItems(menu, ['-', 'exportXml'], parent);
 
-			if (!editorUi.isOffline())
-			{
-				menu.addSeparator(parent);
-				this.addMenuItem(menu, 'export', parent).firstChild.nextSibling.innerHTML = mxResources.get('advanced') + '...';
-			}
+			//remove Advanced
+			// if (!editorUi.isOffline())
+			// {
+			// 	menu.addSeparator(parent);
+			// 	this.addMenuItem(menu, 'export', parent).firstChild.nextSibling.innerHTML = mxResources.get('advanced') + '...';
+			// }
 		})));
 
 		this.put('importFrom', new Menu(mxUtils.bind(this, function(menu, parent)
