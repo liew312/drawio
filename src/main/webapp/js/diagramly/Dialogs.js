@@ -3065,7 +3065,10 @@ var NewDialog = function (
       list.appendChild(title);
     }
 
+    console.log("loggg2")
+    console.log(categories)
     for (var cat in categories) {
+      console.log(cat +" c")
       var entry = document.createElement("div");
       var label = mxResources.get(cat);
       var templateList = categories[cat];
