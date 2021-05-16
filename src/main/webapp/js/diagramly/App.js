@@ -6762,16 +6762,18 @@ App.prototype.updateHeader = function()
 			mxEvent.addListener(this.toggleElement, (mxClient.IS_POINTER) ? 'pointerdown' : 'mousedown',
 	        	mxUtils.bind(this, function(evt)
 	    	{
-						console.log("toggle collapse3");
-
+				console.log("toggle collapse3");
+				if(document.getElementById("templateName").style.paddingTop=="5px"){
+					document.getElementById("templateName").style.paddingTop = "22px";
+				}else{
+					document.getElementById("templateName").style.paddingTop ="5px";
+				}
 				evt.preventDefault();
 			}));
 	
 			// Toggles compact mode
 			mxEvent.addListener(this.toggleElement, 'click', mxUtils.bind(this, function(evt)
 			{
-										console.log("toggle collapse4");
-
 				this.toggleCompactMode();
 				mxEvent.consume(evt);
 			}));
