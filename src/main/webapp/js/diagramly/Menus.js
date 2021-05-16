@@ -100,7 +100,7 @@
 		
 		//testing direct to new after webpage init
 	
-		// console.log(editorUi.actions);
+		console.log(editorUi.actions);
 
 		editorUi.actions.put('insertTemplate', new Action(mxResources.get('template') + '...', function()
 		{
