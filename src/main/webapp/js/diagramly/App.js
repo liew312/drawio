@@ -6774,6 +6774,7 @@ App.prototype.updateHeader = function()
 			// Toggles compact mode
 			mxEvent.addListener(this.toggleElement, 'click', mxUtils.bind(this, function(evt)
 			{
+				console.log("toggle collapse4");
 				this.toggleCompactMode();
 				mxEvent.consume(evt);
 			}));
@@ -6804,6 +6805,7 @@ App.prototype.toggleCompactMode = function(visible)
 	
 	if (visible)
 	{
+		console.log("toggle5");
 		this.menubar.container.style.position = 'absolute';
 		this.menubar.container.style.paddingLeft = '0px';
 		this.menubar.container.style.paddingTop = '';
@@ -6820,6 +6822,8 @@ App.prototype.toggleCompactMode = function(visible)
 	}
 	else
 	{
+		console.log("toggle6");
+
 		this.menubar.container.style.position = 'relative';
 		this.menubar.container.style.paddingLeft = '4px';
 		this.menubar.container.style.paddingTop = '0px';
