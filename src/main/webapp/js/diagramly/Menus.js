@@ -99,8 +99,8 @@
 		});
 		
 		//testing direct to new after webpage init
-	
-		console.log(editorUi.actions);
+		editorUi.actions.get("new...");
+		console.log(editorUi.actions.get("new..."));
 
 		editorUi.actions.put('insertTemplate', new Action(mxResources.get('template') + '...', function()
 		{
