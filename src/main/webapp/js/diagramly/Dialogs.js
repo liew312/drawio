@@ -3017,7 +3017,10 @@ var NewDialog = function (
       mxUtils.write(title, mxResources.get("custom"));
       list.appendChild(title);
 
+      console.log("loggg")
+      console.log(customCats)
       for (var cat in customCats) {
+        console.log(cat)
         var entry = document.createElement("div");
         var label = cat;
         var templateList = customCats[cat];
