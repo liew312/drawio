@@ -1703,7 +1703,7 @@ App.prototype.init = function()
 				
 				if (mode == App.MODE_DEVICE || mode == App.MODE_BROWSER)
 				{
-					this.showDownloadDesktopBanner();
+					// this.showDownloadDesktopBanner();
 				}
 				else if (urlParams['embed'] != '1' && this.getServiceName() == 'draw.io')
 
