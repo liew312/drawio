@@ -1295,89 +1295,90 @@
 			editorUi.menus.addMenuItem(menu, 'runLayout', parent, null, null, mxResources.get('apply') + '...');
 		};
 		
-		this.put('help', new Menu(mxUtils.bind(this, function(menu, parent)
-		{
-			if (!mxClient.IS_CHROMEAPP && editorUi.isOffline())
-			{
-				this.addMenuItems(menu, ['about'], parent);
-			}
-			else
-			{
-				// No translation for menu item since help is english only
-				var item = menu.addItem('Search:', null, null, parent, null, null, false);
-				item.style.backgroundColor = Editor.isDarkMode() ? '#505759' : 'whiteSmoke';
-				item.style.cursor = 'default';
+		//remove help
+		// this.put('help', new Menu(mxUtils.bind(this, function(menu, parent)
+		// {
+		// 	if (!mxClient.IS_CHROMEAPP && editorUi.isOffline())
+		// 	{
+		// 		this.addMenuItems(menu, ['about'], parent);
+		// 	}
+		// 	else
+		// 	{
+		// 		// No translation for menu item since help is english only
+		// 		var item = menu.addItem('Search:', null, null, parent, null, null, false);
+		// 		item.style.backgroundColor = Editor.isDarkMode() ? '#505759' : 'whiteSmoke';
+		// 		item.style.cursor = 'default';
 				
-				var input = document.createElement('input');
-				input.setAttribute('type', 'text');
-				input.setAttribute('size', '25');
-				input.style.marginLeft = '8px';
+		// 		var input = document.createElement('input');
+		// 		input.setAttribute('type', 'text');
+		// 		input.setAttribute('size', '25');
+		// 		input.style.marginLeft = '8px';
 
-				mxEvent.addListener(input, 'keydown', mxUtils.bind(this, function(e)
-				{
-					var term = mxUtils.trim(input.value);
+		// 		mxEvent.addListener(input, 'keydown', mxUtils.bind(this, function(e)
+		// 		{
+		// 			var term = mxUtils.trim(input.value);
 					
-					if (e.keyCode == 13 && term.length > 0)
-					{
-						this.editorUi.openLink('https://www.google.com/search?q=site%3Adiagrams.net+inurl%3A%2Fdoc%2Ffaq%2F+' +
-							encodeURIComponent(term));
-						input.value = '';
-						EditorUi.logEvent({category: 'SEARCH-HELP', action: 'search', label: term});
+		// 			if (e.keyCode == 13 && term.length > 0)
+		// 			{
+		// 				this.editorUi.openLink('https://www.google.com/search?q=site%3Adiagrams.net+inurl%3A%2Fdoc%2Ffaq%2F+' +
+		// 					encodeURIComponent(term));
+		// 				input.value = '';
+		// 				EditorUi.logEvent({category: 'SEARCH-HELP', action: 'search', label: term});
 						
-						window.setTimeout(mxUtils.bind(this, function()
-						{
-							this.editorUi.hideCurrentMenu();
-						}), 0);
-					}
-	                else if (e.keyCode == 27)
-	                {
-	                    input.value = '';
-	                }
-				}));
+		// 				window.setTimeout(mxUtils.bind(this, function()
+		// 				{
+		// 					this.editorUi.hideCurrentMenu();
+		// 				}), 0);
+		// 			}
+	    //             else if (e.keyCode == 27)
+	    //             {
+	    //                 input.value = '';
+	    //             }
+		// 		}));
 				
-				item.firstChild.nextSibling.appendChild(input);
+		// 		item.firstChild.nextSibling.appendChild(input);
 				
-				mxEvent.addGestureListeners(input, function(evt)
-				{
-					if (document.activeElement != input)
-					{
-						input.focus();
-					}
+		// 		mxEvent.addGestureListeners(input, function(evt)
+		// 		{
+		// 			if (document.activeElement != input)
+		// 			{
+		// 				input.focus();
+		// 			}
 					
-					mxEvent.consume(evt);
-				}, function(evt)
-				{
-					mxEvent.consume(evt);
-				}, function(evt)
-				{
-					mxEvent.consume(evt);
-				});
+		// 			mxEvent.consume(evt);
+		// 		}, function(evt)
+		// 		{
+		// 			mxEvent.consume(evt);
+		// 		}, function(evt)
+		// 		{
+		// 			mxEvent.consume(evt);
+		// 		});
 				
-				window.setTimeout(function()
-				{
-					input.focus();
-				}, 0);
+		// 		window.setTimeout(function()
+		// 		{
+		// 			input.focus();
+		// 		}, 0);
 
-				if (EditorUi.isElectronApp)
-				{
-					console.log('electron help menu');
-					this.addMenuItems(menu, ['-', 'keyboardShortcuts', 'quickStart',
-						'support', '-', 'forkme', '-', 'about'], parent);
+		// 		if (EditorUi.isElectronApp)
+		// 		{
+		// 			console.log('electron help menu');
+		// 			this.addMenuItems(menu, ['-', 'keyboardShortcuts', 'quickStart',
+		// 				'support', '-', 'forkme', '-', 'about'], parent);
 
-				}
-				else
-				{
-					this.addMenuItems(menu, ['-', 'keyboardShortcuts', 'quickStart',
-						'support', '-', 'forkme', 'downloadDesktop', '-', 'about'], parent);
-				}
-			}
+		// 		}
+		// 		else
+		// 		{
+		// 			this.addMenuItems(menu, ['-', 'keyboardShortcuts', 'quickStart',
+		// 				'support', '-', 'forkme', 'downloadDesktop', '-', 'about'], parent);
+		// 		}
+		// 	}
 			
-			if (urlParams['test'] == '1')
-			{
-				menu.addSeparator(parent);
-				this.addSubmenu('testDevelop', menu, parent);
-			}
-		})));
+		// 	if (urlParams['test'] == '1')
+		// 	{
+		// 		menu.addSeparator(parent);
+		// 		this.addSubmenu('testDevelop', menu, parent);
+		// 	}
+		// })));
 
 		// Experimental
 		mxResources.parse('diagramLanguage=Diagram Language');

@@ -1026,7 +1026,8 @@ EditorUi.initMinimalTheme = function()
 				menu.addSeparator(parent);
 			}
 			
-			ui.menus.addSubmenu('help', menu, parent);
+			//removed help
+			// ui.menus.addSubmenu('help', menu, parent);
 
             if (urlParams['embed'] == '1')
 			{
