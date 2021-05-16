@@ -3609,18 +3609,18 @@ App.prototype.showSplash = function(force)
 	{
 		var dlg = new SplashDialog(this);
 		
-		this.showDialog(dlg.container, 340, (mxClient.IS_CHROMEAPP || EditorUi.isElectronApp) ? 200 : 230, true, true,
-			mxUtils.bind(this, function(cancel)
-			{
-				// Creates a blank diagram if the dialog is closed
-				if (cancel && !mxClient.IS_CHROMEAPP)
-				{
-					var prev = Editor.useLocalStorage;
-					this.createFile(this.defaultFilename + (EditorUi.isElectronApp? '.drawio' : ''), null, null, null, null, null, null,
-						urlParams['local'] != '1');
-					Editor.useLocalStorage = prev;
-				}
-			}), true);
+		// this.showDialog(dlg.container, 340, (mxClient.IS_CHROMEAPP || EditorUi.isElectronApp) ? 200 : 230, true, true,
+		// 	mxUtils.bind(this, function(cancel)
+		// 	{
+		// 		// Creates a blank diagram if the dialog is closed
+		// 		if (cancel && !mxClient.IS_CHROMEAPP)
+		// 		{
+		// 			var prev = Editor.useLocalStorage;
+		// 			this.createFile(this.defaultFilename + (EditorUi.isElectronApp? '.drawio' : ''), null, null, null, null, null, null,
+		// 				urlParams['local'] != '1');
+		// 			Editor.useLocalStorage = prev;
+		// 		}
+		// 	}), true);
 	});
 	
 	if (this.editor.isChromelessView())
