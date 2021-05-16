@@ -2677,22 +2677,23 @@
 			editorUi.openLink('https://get.draw.io/')
 		}));
 
-		this.editorUi.actions.addAction('share...', mxUtils.bind(this, function()
-		{
-			try
-			{
-				var file = editorUi.getCurrentFile();
+		//delete share
+		// this.editorUi.actions.addAction('share...', mxUtils.bind(this, function()
+		// {
+		// 	try
+		// 	{
+		// 		var file = editorUi.getCurrentFile();
 				
-				if (file != null)
-				{
-					file.share();
-				}
-			}
-			catch (e)
-			{
-				editorUi.handleError(e);
-			}
-		}));
+		// 		if (file != null)
+		// 		{
+		// 			file.share();
+		// 		}
+		// 	}
+		// 	catch (e)
+		// 	{
+		// 		editorUi.handleError(e);
+		// 	}
+		// }));
 
 		this.put('embed', new Menu(mxUtils.bind(this, function(menu, parent)
 		{
