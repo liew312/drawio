@@ -6763,11 +6763,11 @@ App.prototype.updateHeader = function()
 	        	mxUtils.bind(this, function(evt)
 	    	{
 				console.log("toggle collapse3");
-				if(document.getElementById("templateName").style.paddingTop=="5px"){
-					document.getElementById("templateName").style.paddingTop = "22px";
-				}else{
-					document.getElementById("templateName").style.paddingTop ="5px";
-				}
+				// if(document.getElementById("templateName").style.paddingTop=="5px"){
+				// 	document.getElementById("templateName").style.paddingTop = "22px";
+				// }else{
+				// 	document.getElementById("templateName").style.paddingTop ="5px";
+				// }
 				evt.preventDefault();
 			}));
 	
@@ -6819,6 +6819,8 @@ App.prototype.toggleCompactMode = function(visible)
 		this.menubarHeight = App.prototype.menubarHeight;
 		this.refresh();
 		this.toggleElement.style.backgroundImage = 'url(\'' + this.chevronUpImage + '\')';
+		document.getElementById("templateName").style.paddingTop = "22px";
+
 	}
 	else
 	{
@@ -6836,6 +6838,8 @@ App.prototype.toggleCompactMode = function(visible)
 		this.menubarHeight = EditorUi.prototype.menubarHeight;
 		this.refresh();
 		this.toggleElement.style.backgroundImage = 'url(\'' + this.chevronDownImage + '\')';
+	
+		document.getElementById("templateName").style.paddingTop = "5px";
 	}
 	
 	this.compactMode = !visible;
