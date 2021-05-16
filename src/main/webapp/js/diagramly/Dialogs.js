@@ -2733,8 +2733,11 @@ var NewDialog = function (
   var templateInfoObj = null;
 
   function create() {
+    //set templateName
     if (document.getElementById("templateName").getAttribute("data-filesaved")=="0"){
       document.getElementById("templateName").innerHTML = selectedElt.title;
+    }else{
+      localStorage.setItem("templateName", selectedElt.title);
 
     }
 

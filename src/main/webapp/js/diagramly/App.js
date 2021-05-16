@@ -1647,7 +1647,12 @@ App.prototype.init = function()
 		parentDiv.style.position = "absolute";
 		parentDiv.style.left = "50%";
 
-		let templateName = "";
+		// set templateDiv
+		console.log(localStorage.getItem("templateName"))
+
+		let templateName = localStorage.getItem("templateName")?localStorage.getItem("templateName"):"";
+		localStorage.setItem("templateName","");
+		
 		let templateDiv = document.createElement("div");
 		templateDiv.style.display = "inline-block";
 		templateDiv.style.paddingTop = "5px";
@@ -3887,6 +3892,7 @@ App.prototype.pickFile = function(mode)
 			{
 				window.showOpenFilePicker().then(mxUtils.bind(this, function(fileHandles)
 				{
+					//show templateName
 					document.getElementById("templateName").innerHTML="";
 					document.getElementById("templateName").setAttribute("data-filesaved","1");
 					if (fileHandles != null && fileHandles.length > 0 &&
@@ -6819,6 +6825,8 @@ App.prototype.toggleCompactMode = function(visible)
 		this.menubarHeight = App.prototype.menubarHeight;
 		this.refresh();
 		this.toggleElement.style.backgroundImage = 'url(\'' + this.chevronUpImage + '\')';
+
+		//adjust templateName style
 		document.getElementById("templateName").style.paddingTop = "22px";
 
 	}
@@ -6838,7 +6846,7 @@ App.prototype.toggleCompactMode = function(visible)
 		this.menubarHeight = EditorUi.prototype.menubarHeight;
 		this.refresh();
 		this.toggleElement.style.backgroundImage = 'url(\'' + this.chevronDownImage + '\')';
-	
+		//adjust templateName style
 		document.getElementById("templateName").style.paddingTop = "5px";
 	}
 	
