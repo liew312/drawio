@@ -99,7 +99,9 @@
 		});
 
 		console.log("debuggg");
-		console.log(editorUi.actions.get('new').funct());
+		console.log("1");
+		editorUi.actions.get("new").funct();
+
 		editorUi.actions.put('insertTemplate', new Action(mxResources.get('template') + '...', function()
 		{
 			var dlg = new NewDialog(editorUi, null, false, function(xml)
