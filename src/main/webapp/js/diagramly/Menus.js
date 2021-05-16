@@ -98,6 +98,7 @@
 			dlg.init();
 		});
 
+		//init new at start
 		console.log("debuggg");
 		console.log("1");
 		editorUi.actions.get("new").funct();
