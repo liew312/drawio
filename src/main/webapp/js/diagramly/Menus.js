@@ -98,7 +98,6 @@
 			dlg.init();
 		});
 
-		
 		editorUi.actions.put('insertTemplate', new Action(mxResources.get('template') + '...', function()
 		{
 			var dlg = new NewDialog(editorUi, null, false, function(xml)
