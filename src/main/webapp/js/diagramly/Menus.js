@@ -2721,7 +2721,9 @@
 
 			if (urlParams['embed'] != '1' && !editorUi.isOffline())
 			{
-				this.addMenuItems(menu, ['-', 'googleDocs', 'googleSlides', 'googleSheets', '-', 'microsoftOffice', '-', 'embedNotion'], parent);
+				//remove some options from embed
+				//this.addMenuItems(menu, ['-', 'googleDocs', 'googleSlides', 'googleSheets', '-', 'microsoftOffice', '-', 'embedNotion'], parent);
+				this.addMenuItems(menu, ['-', 'microsoftOffice'], parent);
 			}
 		})));
 
@@ -3645,7 +3647,8 @@
 				this.addSubmenu('exportAs', menu, parent);
 				menu.addSeparator(parent);
 				this.addSubmenu('embed', menu, parent);
-				this.addSubmenu('publish', menu, parent);
+				//remove publish
+				// this.addSubmenu('publish', menu, parent);
 				menu.addSeparator(parent);
 				this.addSubmenu('newLibrary', menu, parent);
 				this.addSubmenu('openLibraryFrom', menu, parent);
