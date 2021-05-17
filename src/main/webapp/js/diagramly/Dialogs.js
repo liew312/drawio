@@ -3090,6 +3090,18 @@ var NewDialog = function (
         entry.style.padding = itemPadding;
       }
 
+      //template cat
+      var templateCat = document.createElement("div");
+
+      templateCat.style.cssText =
+        "display:block;cursor:pointer;padding:6px;white-space:nowrap;margin-bottom:-1px;overflow:hidden;text-overflow:ellipsis;user-select:none;";
+      mxUtils.write(templateCat, "动态");
+
+      if (itemPadding != null) {
+        templateCat.style.padding = itemPadding;
+      }
+      list.appendChild(templateCat);
+
       list.appendChild(entry);
 
       if (currentEntry == null && templateList.length > 0) {

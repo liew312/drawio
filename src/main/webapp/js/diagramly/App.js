@@ -5723,8 +5723,8 @@ App.prototype.updateButtonContainer = function()
 		{
 			if (file != null)
 			{
-				if (this.shareButton == null)
-				{
+				// if (this.shareButton == null)
+				// {
 					// this.shareButton = document.createElement('div');
 					// this.shareButton.className = 'geBtn gePrimaryBtn';
 					// this.shareButton.style.display = 'inline-block';
@@ -5760,7 +5760,7 @@ App.prototype.updateButtonContainer = function()
 					// }));
 					
 					// this.buttonContainer.appendChild(this.shareButton);
-				}
+				// }
 			}
 			else if (this.shareButton != null)
 			{
