@@ -3352,8 +3352,11 @@ var NewDialog = function (
 
   outer.appendChild(btns);
 
-  outer.style.width="650px";
   this.container = outer;
+  console.log("debug")
+  console.log(outer.parentElement)
+  console.log(this.container.parentElement)
+
 };
 
 /**
