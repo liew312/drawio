@@ -3352,6 +3352,7 @@ var NewDialog = function (
 
   outer.appendChild(btns);
 
+  outer.style.width="650px";
   this.container = outer;
 };
 
@@ -5305,7 +5306,7 @@ var RevisionDialog = function (editorUi, revs, restoreFn) {
 
           dlg.textarea.style.width = "600px";
           dlg.textarea.style.height = "380px";
-          editorUi.showDialog(dlg.container, 650, 460, true, true);
+          editorUi.showDialog(dlg.container, 620, 460, true, true);
           dlg.init();
         }
       } else {
