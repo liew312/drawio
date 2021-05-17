@@ -2788,7 +2788,7 @@ var NewDialog = function (
   var div = document.createElement("div");
   div.style.border = "1px solid #d3d3d3";
   div.style.position = "absolute";
-  div.style.left = "160px";
+  div.style.left = "190px";
   div.style.right = "34px";
   var divTop = showName ? 72 : 40;
   divTop += hasTabs ? 30 : 0;
@@ -2800,7 +2800,7 @@ var NewDialog = function (
 
   var list = document.createElement("div");
   list.style.cssText =
-    "position:absolute;left:30px;width:128px;top:" +
+    "position:absolute;left:30px;width:158px;top:" +
     divTop +
     "px;bottom:68px;margin-top:6px;overflow:auto;border:1px solid #d3d3d3;";
 
@@ -3082,7 +3082,7 @@ var NewDialog = function (
       }
 
       entry.style.cssText =
-        "display:block;cursor:pointer;padding:6px;white-space:nowrap;margin-bottom:-1px;overflow:hidden;text-overflow:ellipsis;user-select:none;";
+        "display:block;cursor:pointer;padding:6px;white-space:nowrap;margin-bottom:-1px;overflow:hidden;text-overflow:ellipsis;user-select:none;padding-left:18px";
       entry.setAttribute("title", label + " (" + templateList.length + ")");
       mxUtils.write(entry, entry.getAttribute("title"));
 
@@ -5305,7 +5305,7 @@ var RevisionDialog = function (editorUi, revs, restoreFn) {
 
           dlg.textarea.style.width = "600px";
           dlg.textarea.style.height = "380px";
-          editorUi.showDialog(dlg.container, 620, 460, true, true);
+          editorUi.showDialog(dlg.container, 650, 460, true, true);
           dlg.init();
         }
       } else {
