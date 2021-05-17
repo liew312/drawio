@@ -3095,7 +3095,7 @@ var NewDialog = function (
 
       templateCat.style.cssText =
         "display:block;cursor:pointer;padding:6px;white-space:nowrap;margin-bottom:-1px;overflow:hidden;text-overflow:ellipsis;user-select:none;";
-      mxUtils.write(templateCat, "dynamicModel");
+      mxUtils.write(templateCat, "DynamicModel");
 
       if (itemPadding != null) {
         templateCat.style.padding = itemPadding;
