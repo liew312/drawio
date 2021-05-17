@@ -62,19 +62,19 @@
 <template url="pathDependentModel/pathDependentModel2.xml" title="pathDependentModel2"/>
 
  <!--Add 11 templates under staticModel-->
-<template url="staticModel/classifiedModel1.xml" title="classifiedModel1"/>
-<template url="staticModel/classifiedModel2.xml" title="classifiedModel2"/>
-<template url="staticModel/classifiedModel3.xml" title="classifiedModel3"/>
-<template url="staticModel/classifiedModel4.xml" title="classifiedModel4"/>
+<template url="classifiedModel/classifiedModel1.xml" title="classifiedModel1"/>
+<template url="classifiedModel/classifiedModel2.xml" title="classifiedModel2"/>
+<template url="classifiedModel/classifiedModel3.xml" title="classifiedModel3"/>
+<template url="classifiedModel/classifiedModel4.xml" title="classifiedModel4"/>
 
-<template url="staticModel/layoutModel1.xml" title="layoutModel1"/>
-<template url="staticModel/layoutModel2.xml" title="layoutModel2"/>
+<template url="layoutModel/layoutModel1.xml" title="layoutModel1"/>
+<template url="layoutModel/layoutModel2.xml" title="layoutModel2"/>
 
-<template url="staticModel/comparativeModel1.xml" title="comparativeModel1"/>
-<template url="staticModel/comparativeModel2.xml" title="comparativeModel2"/>
-<template url="staticModel/comparativeModel3.xml" title="comparativeModel3"/>
+<template url="comparativeModel/comparativeModel1.xml" title="comparativeModel1"/>
+<template url="comparativeModel/comparativeModel2.xml" title="comparativeModel2"/>
+<template url="comparativeModel/comparativeModel3.xml" title="comparativeModel3"/>
 
-<template url="staticModel/multiStageModel1.xml" title="multiStageModel1"/>
-<template url="staticModel/multiStageModel2.xml" title="multiStageModel2"/>
+<template url="multiStageModel/multiStageModel1.xml" title="multiStageModel1"/>
+<template url="multiStageModel/multiStageModel2.xml" title="multiStageModel2"/>
 
 </templates>
