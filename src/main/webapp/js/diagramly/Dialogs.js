@@ -3115,7 +3115,7 @@ var NewDialog = function (
         let label2 = mxResources.get("dynamicModel");
  
         if (label2 == null) {
-          label2 = cat.substring(0, 1).toUpperCase() + cat.substring(1);
+          label2 = "dynamicModel".substring(0, 1).toUpperCase() + "dynamicModel".substring(1);
         }
 
         if (label2.length > 18) {
@@ -3136,7 +3136,7 @@ var NewDialog = function (
         let label2 = mxResources.get("staticModel");
 
         if (label2 == null) {
-          label2 = cat.substring(0, 1).toUpperCase() + cat.substring(1);
+          label2 = "staticModel".substring(0, 1).toUpperCase() + "staticModel".substring(1);
         }
 
         if (label2.length > 18) {
