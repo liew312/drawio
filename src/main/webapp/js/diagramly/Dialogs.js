@@ -3067,6 +3067,8 @@ var NewDialog = function (
 
     console.log("loggg2")
     console.log(categories)
+    var count = 0;
+
     for (var cat in categories) {
       console.log(cat +" c")
       var entry = document.createElement("div");
@@ -3090,6 +3092,17 @@ var NewDialog = function (
         entry.style.padding = itemPadding;
       }
 
+      let dynamicModelList = [
+        "stagedModel",
+        "processModel",
+        "transformationModel",
+        "pathDependentModel",
+      ];
+
+      if (dynamicModelList.includes(cat)){
+        count += templateList.length;
+        console.log(count)
+      }
       //template cat
       if (cat=="stagedModel"){
         console.log("it is dynamic start");
@@ -3160,8 +3173,18 @@ var NewDialog = function (
       })(cat, entry);
     }
 
+     let templateCat = document.createElement("div");
+     templateCat.style.cssText =
+       "display:block;cursor:pointer;padding:6px;white-space:nowrap;margin-bottom:-1px;overflow:hidden;text-overflow:ellipsis;user-select:none;";
+     mxUtils.write(templateCat, "testing");
+
+     if (itemPadding != null) {
+       templateCat.style.padding = itemPadding;
+     }
+    list.insertBefore(templateCat,list.children[1]);
     addTemplates();
   }
+
 
   if (!compact) {
     outer.appendChild(list);
