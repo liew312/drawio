@@ -5303,7 +5303,7 @@ var RevisionDialog = function (editorUi, revs, restoreFn) {
             mxResources.get("merge")
           );
 
-          dlg.textarea.style.width = "600px";
+          dlg.textarea.style.width = "630px";
           dlg.textarea.style.height = "380px";
           editorUi.showDialog(dlg.container, 650, 460, true, true);
           dlg.init();
