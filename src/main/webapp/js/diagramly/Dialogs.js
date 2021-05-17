@@ -3091,17 +3091,48 @@ var NewDialog = function (
       }
 
       //template cat
-      var templateCat = document.createElement("div");
+      if (cat=="stagedModel"){
+        console.log("it is dynamic start");
+        let templateCat = document.createElement("div");
+        let label2 = mxResources.get("dynamicModel");
+ 
+        if (label2 == null) {
+          label2 = cat.substring(0, 1).toUpperCase() + cat.substring(1);
+        }
 
-      templateCat.style.cssText =
-        "display:block;cursor:pointer;padding:6px;white-space:nowrap;margin-bottom:-1px;overflow:hidden;text-overflow:ellipsis;user-select:none;";
-      mxUtils.write(templateCat, label);
+        if (label2.length > 18) {
+          label2 = label2.substring(0, 18) + "&hellip;";
+        }
+        templateCat.style.cssText =
+          "display:block;cursor:pointer;padding:6px;white-space:nowrap;margin-bottom:-1px;overflow:hidden;text-overflow:ellipsis;user-select:none;";
+        mxUtils.write(templateCat, label2);
 
-      if (itemPadding != null) {
-        templateCat.style.padding = itemPadding;
+        if (itemPadding != null) {
+          templateCat.style.padding = itemPadding;
+        }
+        list.appendChild(templateCat);
+      }else if (cat == "classifiedModel"){
+        console.log("it is static start");
+        let templateCat = document.createElement("div");
+        let label2 = mxResources.get("staticModel");
+
+        if (label2 == null) {
+          label2 = cat.substring(0, 1).toUpperCase() + cat.substring(1);
+        }
+
+        if (label2.length > 18) {
+          label2 = label2.substring(0, 18) + "&hellip;";
+        }
+        templateCat.style.cssText =
+          "display:block;cursor:pointer;padding:6px;white-space:nowrap;margin-bottom:-1px;overflow:hidden;text-overflow:ellipsis;user-select:none;";
+        mxUtils.write(templateCat, label2);
+
+        if (itemPadding != null) {
+          templateCat.style.padding = itemPadding;
+        }
+        list.appendChild(templateCat);
       }
-      list.appendChild(templateCat);
-
+    
       list.appendChild(entry);
 
       if (currentEntry == null && templateList.length > 0) {
