@@ -1648,8 +1648,6 @@ App.prototype.init = function()
 		parentDiv.style.left = "50%";
 
 		// set templateDiv
-		console.log(localStorage.getItem("templateName"))
-
 		let templateName = "";
 
 		let templateDiv = document.createElement("div");
@@ -6774,19 +6772,12 @@ App.prototype.updateHeader = function()
 			mxEvent.addListener(this.toggleElement, (mxClient.IS_POINTER) ? 'pointerdown' : 'mousedown',
 	        	mxUtils.bind(this, function(evt)
 	    	{
-				console.log("toggle collapse3");
-				// if(document.getElementById("templateName").style.paddingTop=="5px"){
-				// 	document.getElementById("templateName").style.paddingTop = "22px";
-				// }else{
-				// 	document.getElementById("templateName").style.paddingTop ="5px";
-				// }
 				evt.preventDefault();
 			}));
 	
 			// Toggles compact mode
 			mxEvent.addListener(this.toggleElement, 'click', mxUtils.bind(this, function(evt)
 			{
-				console.log("toggle collapse4");
 				this.toggleCompactMode();
 				mxEvent.consume(evt);
 			}));
@@ -6817,7 +6808,6 @@ App.prototype.toggleCompactMode = function(visible)
 	
 	if (visible)
 	{
-		console.log("toggle5");
 		this.menubar.container.style.position = 'absolute';
 		this.menubar.container.style.paddingLeft = '0px';
 		this.menubar.container.style.paddingTop = '';
@@ -6838,8 +6828,6 @@ App.prototype.toggleCompactMode = function(visible)
 	}
 	else
 	{
-		console.log("toggle6");
-
 		this.menubar.container.style.position = 'relative';
 		this.menubar.container.style.paddingLeft = '4px';
 		this.menubar.container.style.paddingTop = '0px';

@@ -99,8 +99,6 @@
 		});
 
 		//init new at start
-		console.log("debuggg");
-		console.log("1");
 		editorUi.actions.get("new").funct();
 
 		editorUi.actions.put('insertTemplate', new Action(mxResources.get('template') + '...', function()
