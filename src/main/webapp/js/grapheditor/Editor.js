@@ -855,7 +855,6 @@ function Dialog(editorUi, elt, w, h, modal, closable, onClose, noScroll, transpa
 	
 	// Keeps window size inside available space
 	elt.style.maxHeight = '100%';
-	console.log("dialogg")
 	
 	w = (document.body != null) ? Math.min(w, document.body.scrollWidth - 64) : w;
 	h = Math.min(h, dh - 64);

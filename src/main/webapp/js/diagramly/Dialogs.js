@@ -2789,7 +2789,7 @@ var NewDialog = function (
   div.style.border = "1px solid #d3d3d3";
   div.style.position = "absolute";
   div.style.left = "190px";
-  div.style.right = "34px";
+  div.style.right = "7px";
   var divTop = showName ? 72 : 40;
   divTop += hasTabs ? 30 : 0;
   div.style.top = divTop + "px";
@@ -3353,9 +3353,9 @@ var NewDialog = function (
   outer.appendChild(btns);
 
   this.container = outer;
-  console.log("debug")
-  console.log(outer.parentElement)
-  console.log(this.container.parentElement)
+  console.log("debug2")
+  console.log(outer.parentNode)
+  console.log(this.container.parentNode)
 
 };
 
