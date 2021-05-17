@@ -3092,19 +3092,24 @@ var NewDialog = function (
         entry.style.padding = itemPadding;
       }
 
+      let totalCats = 2
       let dynamicModelList = [
         "stagedModel",
         "processModel",
         "transformationModel",
         "pathDependentModel",
       ];
+      let staticModelList = [
+        "classifiedModel",
+        "layoutModel",
+        "comparativeModel",
+        "multiStageModel",
+      ];
 
-      if (dynamicModelList.includes(cat)){
-        count += templateList.length;
-        console.log(count)
-      }
+      count += templateList.length;
+
       //template cat
-      if (cat=="stagedModel"){
+      if (dynamicModelList.indexOf(cat)==dynamicModelList.length-1){
         console.log("it is dynamic start");
         let templateCat = document.createElement("div");
         let label2 = mxResources.get("dynamicModel");
@@ -3118,13 +3123,14 @@ var NewDialog = function (
         }
         templateCat.style.cssText =
           "display:block;cursor:pointer;padding:6px;white-space:nowrap;margin-bottom:-1px;overflow:hidden;text-overflow:ellipsis;user-select:none;";
-        mxUtils.write(templateCat, label2);
-
+        mxUtils.write(templateCat, label2+" ("+count+")");
+        //reset category count
+        count=0;
         if (itemPadding != null) {
           templateCat.style.padding = itemPadding;
         }
-        list.appendChild(templateCat);
-      }else if (cat == "classifiedModel"){
+        list.insertBefore(templateCat,list.children[0]);
+      }else if (staticModelList.indexOf(cat)==staticModelList.length-1){
         console.log("it is static start");
         let templateCat = document.createElement("div");
         let label2 = mxResources.get("staticModel");
@@ -3138,13 +3144,56 @@ var NewDialog = function (
         }
         templateCat.style.cssText =
           "display:block;cursor:pointer;padding:6px;white-space:nowrap;margin-bottom:-1px;overflow:hidden;text-overflow:ellipsis;user-select:none;";
-        mxUtils.write(templateCat, label2);
-
+        mxUtils.write(templateCat, label2 + " (" + count + ")");
+        //reset category count
+        count = 0;
         if (itemPadding != null) {
           templateCat.style.padding = itemPadding;
         }
-        list.appendChild(templateCat);
+        list.insertBefore(templateCat, list.children[1+dynamicModelList.length]);
       }
+
+      // if (cat=="stagedModel"){
+      //   console.log("it is dynamic start");
+      //   let templateCat = document.createElement("div");
+      //   let label2 = mxResources.get("dynamicModel");
+ 
+      //   if (label2 == null) {
+      //     label2 = cat.substring(0, 1).toUpperCase() + cat.substring(1);
+      //   }
+
+      //   if (label2.length > 18) {
+      //     label2 = label2.substring(0, 18) + "&hellip;";
+      //   }
+      //   templateCat.style.cssText =
+      //     "display:block;cursor:pointer;padding:6px;white-space:nowrap;margin-bottom:-1px;overflow:hidden;text-overflow:ellipsis;user-select:none;";
+      //   mxUtils.write(templateCat, label2);
+
+      //   if (itemPadding != null) {
+      //     templateCat.style.padding = itemPadding;
+      //   }
+      //   list.appendChild(templateCat);
+      // }else if (cat == "classifiedModel"){
+      //   console.log("it is static start");
+      //   let templateCat = document.createElement("div");
+      //   let label2 = mxResources.get("staticModel");
+
+      //   if (label2 == null) {
+      //     label2 = cat.substring(0, 1).toUpperCase() + cat.substring(1);
+      //   }
+
+      //   if (label2.length > 18) {
+      //     label2 = label2.substring(0, 18) + "&hellip;";
+      //   }
+      //   templateCat.style.cssText =
+      //     "display:block;cursor:pointer;padding:6px;white-space:nowrap;margin-bottom:-1px;overflow:hidden;text-overflow:ellipsis;user-select:none;";
+      //   mxUtils.write(templateCat, label2);
+
+      //   if (itemPadding != null) {
+      //     templateCat.style.padding = itemPadding;
+      //   }
+      //   list.appendChild(templateCat);
+      // }
     
       list.appendChild(entry);
 
@@ -3173,15 +3222,15 @@ var NewDialog = function (
       })(cat, entry);
     }
 
-     let templateCat = document.createElement("div");
-     templateCat.style.cssText =
-       "display:block;cursor:pointer;padding:6px;white-space:nowrap;margin-bottom:-1px;overflow:hidden;text-overflow:ellipsis;user-select:none;";
-     mxUtils.write(templateCat, "testing");
+    //  let templateCat = document.createElement("div");
+    //  templateCat.style.cssText =
+    //    "display:block;cursor:pointer;padding:6px;white-space:nowrap;margin-bottom:-1px;overflow:hidden;text-overflow:ellipsis;user-select:none;";
+    //  mxUtils.write(templateCat, "testing");
 
-     if (itemPadding != null) {
-       templateCat.style.padding = itemPadding;
-     }
-    list.insertBefore(templateCat,list.children[1]);
+    //  if (itemPadding != null) {
+    //    templateCat.style.padding = itemPadding;
+    //  }
+    // list.insertBefore(templateCat,list.children[0]);
     addTemplates();
   }
 
