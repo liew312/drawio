@@ -2733,14 +2733,6 @@ var NewDialog = function (
   var templateInfoObj = null;
 
   function create() {
-    //set templateName
-    if (document.getElementById("templateName").getAttribute("data-filesaved")=="0"){
-      document.getElementById("templateName").innerHTML = selectedElt.title;
-    }else{
-      localStorage.setItem("templateName", selectedElt.title);
-
-    }
-
     if (templateExtUrl) {
       if (!showName) {
         editorUi.hideDialog();
@@ -2768,7 +2760,17 @@ var NewDialog = function (
               null,
               function () {
                 editorUi.hideDialog();
-                console.log("create file2")
+                //set templateName
+                if (
+                  document
+                    .getElementById("templateName")
+                    .getAttribute("data-filesaved") == "0"
+                ) {
+                  document.getElementById("templateName").innerHTML =
+                    selectedElt.title;
+                } else {
+                  localStorage.setItem("templateName", selectedElt.title);
+                }
               },
               null,
               folderId,
