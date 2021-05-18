@@ -2768,6 +2768,7 @@ var NewDialog = function (
               null,
               function () {
                 editorUi.hideDialog();
+                console.log("create file2")
               },
               null,
               folderId,
@@ -2776,7 +2777,6 @@ var NewDialog = function (
                 ? templateClibs
                 : null
             );
-            console.log("create file")
           },
           editorUi.mode != App.MODE_GOOGLE ||
             editorUi.stateArg == null ||
