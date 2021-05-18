@@ -2776,6 +2776,7 @@ var NewDialog = function (
                 ? templateClibs
                 : null
             );
+            console.log("create file")
           },
           editorUi.mode != App.MODE_GOOGLE ||
             editorUi.stateArg == null ||
