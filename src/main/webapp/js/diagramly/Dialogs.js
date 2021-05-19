@@ -3106,7 +3106,7 @@ var NewDialog = function (
 
       count += templateList.length;
 
-      //template cat
+      //set template categories
       if (dynamicModelList.indexOf(cat)==dynamicModelList.length-1){
         let templateCat = document.createElement("div");
         let label2 = mxResources.get("dynamicModel");
